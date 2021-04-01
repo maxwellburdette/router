@@ -1,0 +1,74 @@
+html {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.formContainer {
+	display: flex;
+    padding: 20px;
+	margin: 10px;
+    justify-content:center;
+	align-items: left;
+	flex-direction: column;
+	font-family: sans-serif;
+}
+
+.form {
+	width: 100%;
+	position: relative;
+	height: 50px;
+    overflow: hidden;
+}
+
+.form input {
+	width: 100%;
+	height: 100%;
+	padding-top: 10px;
+	border: none;
+	color: #595f6e;
+    outline: none;
+	background: #E5E5E5;
+}
+
+.form label {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	border-bottom: 1px solid black;
+}
+
+.form label::after {
+	content: "";
+	position: absolute;
+	left: 0px;
+	bottom: -1px;
+	height: 100%;
+	width: 100%;
+	border-bottom: 3px solid #5fa8d3;
+	transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.content-name{
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name
+{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #5fa8d3;
+}
+
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after
+{
+    transform: translateX(0%);
+}
