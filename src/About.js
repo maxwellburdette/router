@@ -1,5 +1,5 @@
-import React from "react";
-import Input from "./Input";
+import React from "react"
+import Input from "./Input"
 
 function About() {
 	return (
@@ -19,11 +19,11 @@ function About() {
 				/>
 				<br />
 				<div className="buttonContainer">
-					<a href="#">Submit</a>
+					<a href="localhost:3000">Submit</a>
 				</div>
 			</div>
 		</div>
-	);
+	)
 }
 
-export default About;
+export default About

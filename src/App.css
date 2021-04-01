@@ -1,6 +1,8 @@
 body {
 	margin: 0;
 	padding: 0;
+	background-color: #e5e5e5;
+	overflow-x: hidden;
 }
 h1 {
 	text-align: center;
@@ -14,14 +16,14 @@ nav {
 	color: white;
 }
 
-.nav-links {
+nav .nav-links {
 	width: 50%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	list-style-type: none;
 }
-li::before {
+nav .nav-links li::before {
 	content: "";
 	position: absolute;
 	border-top: 1px solid #111;
@@ -32,11 +34,11 @@ li::before {
 	transform: translateX(100%);
 	transition: transform 0.3s ease;
 }
-li {
+nav .nav-links li {
 	transition: 0.5s;
 	overflow: hidden;
 }
-li::after {
+nav .nav-links li::after {
 	content: "";
 	position: absolute;
 	border-bottom: 1px solid #111;
@@ -48,19 +50,19 @@ li::after {
 	transition: transform 0.3s ease;
 }
 
-li:hover:after {
+nav .nav-links li:hover:after {
 	transform: translateX(0%);
 }
-li:hover:before {
+nav .nav-links li:hover:before {
 	transform: translateX(0%);
 }
-li:hover {
+nav .nav-links li:hover {
 	color: red;
 	transform: scale(2) translateY(-10%);
 }
 
 .container {
-	width: 25%;
+	width: 90%;
 	margin: auto;
 	background: #e5e5e5;
 	box-shadow: 5px 10px 18px #888888;
@@ -98,4 +100,19 @@ li:hover {
 }
 .container .buttonContainer a:hover {
 	background: #37b6fe;
+}
+
+.container ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 10px;
+	background: #5fa8d3;
+	box-shadow: 0px -1px 18px #888888;
+	cursor: pointer;
+}
+.container ul li {
+	font-size: 20px;
+	font-weight: 300;
+	list-style-type: none;
 }
