@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import Input from "./Input"
 import Radio from "./Radio"
 var axios = require("axios")
@@ -43,7 +43,7 @@ export default function Shop() {
 	}
 
 	async function getItems(url) {
-		const res = await axios
+		await axios
 			.get(url, {
 				headers: {
 					"x-rapidapi-key":
@@ -62,7 +62,7 @@ export default function Shop() {
 	}
 
 	async function getMatches(url) {
-		const res = await axios
+		await axios
 			.get(url, {
 				headers: {
 					"x-rapidapi-key":
