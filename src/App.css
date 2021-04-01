@@ -64,18 +64,15 @@ li:hover {
 	margin: auto;
 	background: #e5e5e5;
 	box-shadow: 5px 10px 18px #888888;
-	
-	
 }
 .container .header {
 	width: 100%;
-	background-color: rgba(73, 79, 82);;
-	padding: 10px 0px; 
+	background-color: rgba(73, 79, 82);
+	padding: 10px 0px;
 	box-shadow: 5px 10px 18px #888888;
 }
 
-.container .header h1
-{
+.container .header h1 {
 	color: #fff;
 	text-align: center;
 }
@@ -89,15 +86,15 @@ li:hover {
 	border-radius: 0px 0px 20px 20px;
 }
 
-.container .buttonContainer a {
+.container .buttonContainer a,
+.container .buttonContainer button {
 	text-decoration: none;
 	padding: 20px 20px;
 	background: #5fa8d3;
 	text-align: center;
 	transition: 0.5s;
 	justify-content: flex-end;
-
-	
+	cursor: pointer;
 }
 .container .buttonContainer a:hover {
 	background: #37b6fe;
