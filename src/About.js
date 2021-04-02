@@ -1,7 +1,29 @@
-import React from "react"
+import { useEffect } from "react"
 import Input from "./Input"
+const axios = require("axios")
 
 function About() {
+	useEffect(() => {
+		getApiDetails()
+	}, [])
+
+	function getApiDetails() {
+		return axios
+			.get("wzapi.tracker.gg", {
+				headers: {
+					"TRN-Api-Key": "1e669f29-1ac9-4876-9ba3-d9077b40916a",
+				},
+			})
+			.then((res) => {
+				//console.log(res.data)
+				console.log(res)
+			})
+			.catch(function (err) {
+				console.log(err)
+			})
+			.then(function () {})
+	}
+
 	return (
 		<div>
 			<h1>About Page</h1>

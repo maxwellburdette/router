@@ -25,6 +25,14 @@ export default function Shop() {
 		}
 		return mode
 	}
+
+	function gulag(object) {
+		if (object > 0) {
+			return "Won"
+		}
+
+		return "Lost"
+	}
 	// psn, steam, xbl, battle, uno (Activision ID), acti (Activision Tag)
 
 	async function handleClick(e) {
@@ -52,7 +60,7 @@ export default function Shop() {
 				},
 			})
 			.then((res) => {
-				//console.log(res.data)
+				console.log(res)
 				setStats(res.data.br)
 			})
 			.catch(function (err) {
@@ -71,7 +79,7 @@ export default function Shop() {
 				},
 			})
 			.then((res) => {
-				//console.log(res.data)
+				console.log(res)
 				setGames(res.data.matches)
 			})
 			.catch(function (err) {
@@ -120,8 +128,10 @@ export default function Shop() {
 						{games.map((match) => (
 							<ul>
 								<li>Mode: {gameMode(match.mode)}</li>
+								<li>Team Placement: {match.playerStats.teamPlacement}</li>
 								<li>Kills: {match.playerStats.kills}</li>
 								<li>Deaths: {match.playerStats.deaths}</li>
+								<li>Gulag: {gulag(match.playerStats.gulagKills)}</li>
 							</ul>
 						))}
 					</div>
